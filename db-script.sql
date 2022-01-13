@@ -24,5 +24,10 @@ CREATE TABLE requestor
     
 CREATE TABLE medicine
 	(med_id INT PRIMARY KEY AUTO_INCREMENT,
-    med_name VARCHAR(50))
+    med_name VARCHAR(50),
+    quantity INT DEFAULT 0);
     
+CREATE TABLE requests
+	(requestor_id INT NOT NULL,
+    med_id INT NOT NULL,
+    req_status VARCHAR(20) DEFAULT "Pending");
