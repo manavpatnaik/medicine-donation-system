@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS medical;
+
 USE medical;
 
 CREATE TABLE donor
