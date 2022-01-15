@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 	});
 });
 
-router.get('/specific', (req, res) => {
+router.post('/specific', (req, res) => {
 	const { name } = req.body;
 	const sql = `SELECT * FROM medicine WHERE med_name LIKE "%${name}%";`;
 	db.query(sql, (err, results) => {
