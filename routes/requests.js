@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 	});
 });
 
-router.get('/users', (req, res) => {
+router.post('/users', (req, res) => {
 	const { requestor_id } = req.body;
 	const sql = `SELECT * FROM requests WHERE requestor_id=${requestor_id};`;
 	db.query(sql, (err, results) => {
@@ -27,7 +27,7 @@ router.get('/users', (req, res) => {
 	});
 });
 
-router.get('/medicines', (req, res) => {
+router.post('/medicines', (req, res) => {
 	const { med_id } = req.body;
 	const sql = `SELECT * FROM requests WHERE med_id=${med_id};`;
 	db.query(sql, (err, results) => {
