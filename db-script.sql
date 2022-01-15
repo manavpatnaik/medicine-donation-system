@@ -33,3 +33,13 @@ CREATE TABLE requests
 	(requestor_id INT NOT NULL,
     med_id INT NOT NULL,
     req_status VARCHAR(20) DEFAULT "Pending");
+    
+CREATE TABLE donations
+	(donor_id INT NOT NULL,
+    med_id INT NOT NULL,
+    quantity INT);
+    
+CREATE TABLE deliveries
+	(requestor_id INT NOT NULL,
+    emp_id INT);
+
