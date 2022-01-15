@@ -33,8 +33,20 @@ router.post('/signupReq', (req, res) => {
 
 router.post('/login', (req, res) => {
 	const { email, password, userType } = req.body;
+	let type;
+	switch (userType) {
+		case 'donor':
+			type = 'donor';
+			break;
+		case 'requestor':
+			type = 'req';
+			break;
+		case 'employee':
+			type = 'emp';
+			break;
+	}
 	const sql = `SELECT * FROM ${userType} 
-				WHERE ${userType}_email="${email}" AND ${userType}_password="${password}";`;
+				WHERE ${type}_email="${email}" AND ${type}_password="${password}";`;
 	console.log(sql);
 	db.query(sql, (err, results) => {
 		if (err) return res.status(400).send({ success: false, msg: err.message });
